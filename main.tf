@@ -7,8 +7,14 @@ terraform {
   }
 }
 
-module "s3-bucket" {
-  source              = "cloudposse/s3-bucket/aws"
+# module "s3-bucket" {
+#   source              = "cloudposse/s3-bucket/aws"
+#   version             = "3.1.0"
+#   s3_object_ownership = "BucketOwnerEnforced"
+# }
+
+module "s3_bucket" {
+  source              = "app.terraform.io/jione-park-org4/s3-bucket/aws"
   version             = "3.1.0"
   s3_object_ownership = "BucketOwnerEnforced"
 }
